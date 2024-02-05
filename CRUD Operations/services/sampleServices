@@ -1,0 +1,30 @@
+const sampleModel = require('../model/sample')
+
+exports.getSamples = async()=>{
+   return  await sampleModel.find({})
+}
+
+exports.getOneSample = async()=>{
+    return await sampleModel.findOne({name:'Ramisha'})
+}
+
+exports.getSampleById = async(id)=>{
+    return await sampleModel.findById(id)
+}
+
+// exports.createNewSample = async(id,blog)=>{
+//     return await sampleModel.create(id,blog)
+// }
+
+exports.deleteSamples = async()=>{
+    return await sampleModel.deleteMany({age: {$lt: 18 }})
+}
+
+exports.countSamples = async()=>{
+    return await sampleModel.count({age: {$gt: 20}})
+}
+
+// exports.updateSample = async(id,sample)=>{
+//     return await sampleModel.findByIdAndUpdate(id,sample)
+// }
+
